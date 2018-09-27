@@ -6,7 +6,7 @@ var conlog = console.log;
 var header = document.getElementsByClassName('header')[0]
 var headerBackground = document.createElement('img')
 header.style.overflow = "hidden"
-headerBackground.src = "img/1.jpg"
+headerBackground.src = "http://www.hdgalaxys6wallpaper.com/wp-content/uploads/Texture/Blue%20texture%20Galaxy%20S6%20Wallpaper.jpg"
 //headerBackground.height = header.clientHeight;
 //headerBackground.width = header.clientWidth;
 header.appendChild(headerBackground)
