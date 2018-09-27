@@ -6,10 +6,9 @@ var conlog = console.log;
 var header = document.getElementsByClassName('header')[0]
 var headerBackground = document.createElement('img')
 header.style.overflow = "hidden"
-headerBackground.src = "http://mustafaozat.com/wp-content/uploads/2014/04/blue-vignetting-wallpapers_28443_2560x1600.jpg"
 //headerBackground.height = header.clientHeight;
 //headerBackground.width = header.clientWidth;
-header.appendChild(headerBackground)
+//header.appendChild(headerBackground)
 
 // NOTE:Content
 var content = document.getElementsByClassName('content')[0]
