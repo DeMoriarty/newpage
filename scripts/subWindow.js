@@ -188,14 +188,8 @@ export default class SubWindow {
         let closeIcon = document.createElement('i')
         closeIcon.classList.add("material-icons")
         closeIcon.classList.add("unselectable")
+        closeIcon.classList.add('-sh-closeicon')
         closeIcon.innerText = "close"
-        closeIcon.style.position = "absolute"
-        closeIcon.style.padding = "5px"
-        closeIcon.style.right = "2.5px"
-        closeIcon.style.top = '2.5px'
-        closeIcon.style.backgroundColor = "grey"
-        closeIcon.style.float = 'right'
-        closeIcon.style.cursor = "pointer"
         closeIcon.onclick = () => {
             document.body.removeChild(windowmask)
         }

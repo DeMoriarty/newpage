@@ -39,16 +39,12 @@ var navbarItems = navbar.children
 
 for (let i = 0; i < navbarItems.length; i++) {
     let current = navbarItems[i];
-    current.style.display = "inline-block"
-    current.onmouseenter = () => { current.style.backgroundColor = 'rgb(0,60,90)'; }
+    current.style.display = "inline-block";
     current.onmouseleave = () => {
-        current.style.backgroundColor = 'rgb(60,108,128)';
-        if (current.href == window.location.href) {
-            current.style.backgroundColor = "rgb(0,30,30)"
+        if (current.href == window.location.href) { 
         }
     }
     if (current.href == window.location.href) {
-        current.style.backgroundColor = "rgb(0,30,30)"
     }
 }
 
@@ -63,7 +59,8 @@ searchtag.style.cursor = "pointer"
 searchtag.draggable = false
 
 var searchbox = document.createElement('div');
-searchbox.className = "rightnavtag"
+searchbox.className = "rightnavtag searchbox"
+searchbox.id = "searchbox"
 searchbox.style.position = "absolute"
 searchbox.style.right = "50px"
 //navbar.appendChild(searchbox)
@@ -78,11 +75,13 @@ searchbox.appendChild(searchform)
 var searchbar = document.createElement("input")
 searchbar.type = "search"
 searchbar.name = "q"
+searchbar.className = "searchbar"
 searchbar.style.display = "inline-block"
 
 var searchbutton = document.createElement("input")
 searchbutton.type = "submit"
 searchbutton.name = "submit"
+searchbutton.className = "searchbutton"
 searchbutton.style.display = "inline-block"
 
 searchform.appendChild(searchbar);
