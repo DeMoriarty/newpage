@@ -1,14 +1,10 @@
 import subWindow from './subWindow.js';
+import {default as gradSpinner, waterdrop, jumper, dotSpinner, doubleSpinner} from './spinner.js'
 
 var conlog = console.log;
 
 // NOTE:Header
 var header = document.getElementsByClassName('header')[0]
-var headerBackground = document.createElement('img')
-header.style.overflow = "hidden"
-//headerBackground.height = header.clientHeight;
-//headerBackground.width = header.clientWidth;
-//header.appendChild(headerBackground)
 
 // NOTE:Content
 var content = document.getElementsByClassName('content')[0]
@@ -26,8 +22,6 @@ footer.style.top = Number(contentstyle.height.replace('px', '')) + Number(conten
 var navbar = document.getElementsByClassName("topnav")[0]
 var originalOffset = navbar.offsetTop
 window.onscroll = () => {
-    //let navbarPos = navbar.getBoundingClientRect();
-    let offset = navbar.offsetTop
     if (window.pageYOffset >= originalOffset) {
         navbar.classList.add('sticky')
     } else {
@@ -39,7 +33,6 @@ var navbarItems = navbar.children
 
 for (let i = 0; i < navbarItems.length; i++) {
     let current = navbarItems[i];
-    current.style.display = "inline-block";
     current.onmouseleave = () => {
         if (current.href == window.location.href) { 
         }
@@ -54,17 +47,11 @@ icons.href = "https://fonts.googleapis.com/icon?family=Material+Icons"
 document.head.appendChild(icons)
 
 var searchtag = document.getElementById("search")
-searchtag.style.display = "inline-flex"
-searchtag.style.cursor = "pointer"
 searchtag.draggable = false
 
 var searchbox = document.createElement('div');
-searchbox.className = "rightnavtag searchbox"
+searchbox.className = "rightnavtag"
 searchbox.id = "searchbox"
-searchbox.style.position = "absolute"
-searchbox.style.right = "50px"
-//navbar.appendChild(searchbox)
-
 
 var searchform = document.createElement('form')
 searchform.action = "http://www.google.com/search"
@@ -76,13 +63,11 @@ var searchbar = document.createElement("input")
 searchbar.type = "search"
 searchbar.name = "q"
 searchbar.className = "searchbar"
-searchbar.style.display = "inline-block"
 
 var searchbutton = document.createElement("input")
 searchbutton.type = "submit"
 searchbutton.name = "submit"
 searchbutton.className = "searchbutton"
-searchbutton.style.display = "inline-block"
 
 searchform.appendChild(searchbar);
 searchform.appendChild(searchbutton);
@@ -90,12 +75,11 @@ searchform.appendChild(searchbutton);
 var searchicon = document.getElementById("search-icon")
 searchicon.className = "material-icons"
 searchicon.innerText = "search"
+
 var closeicon = document.createElement("i")
 closeicon.id = "close-icon"
 closeicon.className = "material-icons"
 closeicon.innerText = "close"
-closeicon.style.display = "block"
-closeicon.style.float = "right"
 
 searchtag.open = false;
 searchtag.onclick = () => {
@@ -113,6 +97,15 @@ searchtag.onclick = () => {
 
 }
 
-var subw1 = new subWindow(150, 250, 200, 300)
+var subw1 = new subWindow(150, 250, 400, 300);
+var spin = doubleSpinner(0, 0, 20);
+var drop = waterdrop(100, 0, 30, 5, 3);
+var jump = jumper(200, 30, 3);
+var dot = dotSpinner(0,100,30,9, 2)
+var grad = gradSpinner(100, 100, 30, 'white')
+subw1.content.appendChild(spin)
+subw1.content.appendChild(drop)
+subw1.content.appendChild(jump)
+subw1.content.appendChild(dot)
+subw1.content.appendChild(grad)
 subw1.appendTo(document.body)
-

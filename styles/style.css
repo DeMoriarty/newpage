@@ -1,19 +1,15 @@
 * {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
-
 body {
     color: black;
 }
-
 section {
     border: grey 2px none;
 }
-
 article {
     border: rgb(85, 85, 85) 2px none;
 }
-
 .header {
     border: grey 1px none;
     background-image: linear-gradient( to top, rgb(255, 255, 255) 0%, rgb(240, 240, 240) 40%, rgb(200, 200, 200)), url('http://mustafaozat.com/wp-content/uploads/2014/04/blue-vignetting-wallpapers_28443_2560x1600.jpg');
@@ -25,7 +21,6 @@ article {
     height: 200;
     width: 1350;
 }
-
 .topnav {
     border: grey 1px none;
     background-color: rgb(60, 60, 60);
@@ -40,7 +35,6 @@ article {
     margin: 0px;
     vertical-align: middle;
 }
-
 .navtag {
     float: left;
     display: inline-block;
@@ -53,16 +47,21 @@ article {
     text-decoration: none;
     font-size: larger;
 }
-
 .navtag:hover,
 .rightnavtag:hover {
     animation: navtag-anim 0.3s ease-out forwards;
 }
-
+#search{
+    display:inline-flex;
+    cursor: pointer;
+}
+#searchbox{
+    position: absolute;
+    right: 50px;
+}
 #searchbox:hover {
     animation: none;
 }
-
 @keyframes navtag-anim {
     0% {}
     100% {
@@ -71,10 +70,9 @@ article {
         box-shadow: 1px 1px 10px 1px black inset, -1px -1px 10px 1px black inset;
     }
 }
-
 .rightnavtag {
     float: right;
-    display: block;
+    display: inline-block;
     color: white;
     padding-left: 15px;
     padding-right: 15px;
@@ -83,13 +81,11 @@ article {
     text-decoration: none;
     font-size: larger;
 }
-
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
 }
-
 .content {
     background-color: indianred;
     border: grey 1px none;
@@ -99,7 +95,6 @@ article {
     width: 1350;
     min-height: 700px;
 }
-
 .side {
     background-color: coral;
     border: grey 1px none;
@@ -110,7 +105,6 @@ article {
     min-width: 150px;
     min-height: 700px;
 }
-
 .footer {
     position: absolute;
     border: grey 1px none;
@@ -119,7 +113,6 @@ article {
     left: 0;
     width: 1350;
 }
-
 .botnav {
     border: grey 1px none;
     background-color: skyblue;
@@ -129,7 +122,6 @@ article {
     width: 100%;
     min-height: 30;
 }
-
 .about {
     position: relative;
     background-color: brown;
@@ -138,7 +130,6 @@ article {
     width: 100%;
     min-height: 100;
 }
-
 .copyright {
     background-color: violet;
     font-size: 10;
@@ -146,7 +137,6 @@ article {
     font-family: sans-serif;
     min-height: 15;
 }
-
 #search-icon,
 #close-icon {
     -webkit-touch-callout: none;
@@ -155,8 +145,15 @@ article {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    display:block;
+    float:right;
 }
-
+.searchbutton{
+    display:inline-block;
+}
+.searchbar{
+    display:inline-block;
+}
 .-sh-topborder {
     width: 100%;
     height: 10px;
@@ -164,7 +161,6 @@ article {
     position: absolute;
     cursor: n-resize;
 }
-
 .-sh-bottomborder {
     width: 100%;
     height: 10px;
@@ -173,7 +169,6 @@ article {
     vertical-align: bottom;
     cursor: s-resize;
 }
-
 .-sh-leftborder {
     width: 10px;
     height: 100%;
@@ -182,7 +177,6 @@ article {
     position: absolute;
     cursor: w-resize;
 }
-
 .-sh-rightborder {
     width: 10px;
     height: 100%;
@@ -191,7 +185,6 @@ article {
     right: -5px;
     cursor: e-resize;
 }
-
 .-sh-dragbar {
     width: 100%;
     height: 40px;
@@ -200,13 +193,11 @@ article {
     position: absolute;
     cursor: move;
 }
-
 .-sh-subwindow-body {
     border: 5px groove grey;
     box-sizing: border-box;
     background: linear-gradient( to bottom, rgba(128, 128, 128, 0.9) 0%, rgba(211, 211, 211, 0.7) 20%, rgba(211, 211, 211, 0.7) 100%);
 }
-
 .-sh-closeicon {
     position: absolute;
     padding: 3px;
@@ -215,11 +206,9 @@ article {
     float: right;
     cursor: pointer;
 }
-
 .-sh-closeicon:hover {
     background-color: rgba(90, 90, 90, 0.8);
 }
-
 .unselectable {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -228,68 +217,11 @@ article {
     -ms-user-select: none;
     user-select: none;
 }
-
 .spins {
     position: absolute;
-    align-items: center;
     left: 30vw;
 }
 
-.spinner {
-    position: relative;
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: transparent;
-    border-radius: 50%;
-    margin: 10px;
-    border-width: 3px;
-    border-style: solid;
-    border-color: transparent;
-    border-left-color: black;
-    border-right-color: black;
-    animation: spinning 1.5s ease-in-out infinite alternate-reverse;
-}
-
-.spinner::after {
-    content: '';
-    visibility: visible;
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    left: -3px;
-    top: -3px;
-    border-radius: 50%;
-    display: block;
-    border-width: 3px;
-    border-style: solid;
-    border-color: rgba(0, 0, 0, 0);
-    border-top-color: black;
-    border-bottom-color: black;
-    animation: spinning 1.5s ease-in-out infinite forwards alternate;
-}
-
-@keyframes spinning {
-    0% {
-        transform: rotate(0deg) scale(1);
-    }
-    50% {
-        transform: rotate(90deg) scale(1.3)
-    }
-    100% {
-        transform: rotate(360deg) scale(1);
-    }
-}
-
-.spinner-2 {
-    position: relative;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    margin: 10px;
-}
 
 .s21 {
     position: absolute;
@@ -301,7 +233,6 @@ article {
     border-radius: 50%;
     animation: spin21 2s ease-in-out infinite alternate;
 }
-
 .s21::after {
     content: '';
     position: absolute;
@@ -313,7 +244,6 @@ article {
     left: 20;
     animation: bigger 2s ease-in-out infinite alternate;
 }
-
 .s22 {
     content: '';
     position: absolute;
@@ -325,7 +255,6 @@ article {
     border-radius: 50%;
     animation: spin21 2s ease-in-out infinite alternate;
 }
-
 .s22::after {
     content: '';
     position: absolute;
@@ -338,7 +267,6 @@ article {
     left: 20;
     animation: bigger 2s ease-in-out infinite alternate;
 }
-
 @keyframes spin21 {
     0% {
         transform: rotate(0turn) scale(1);
@@ -347,270 +275,11 @@ article {
         transform: rotate(0.5turn) scale(0.5);
     }
 }
-
 @keyframes bigger {
     from {
         transform: scale(1);
     }
     to {
         transform: scale(1.7);
-    }
-}
-
-.raindrop {
-    position: relative;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
-    border-radius: 50%;
-    margin: 10px;
-}
-
-.raindrop1 {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    top: 0;
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    border-radius: 50%;
-    opacity: 0.8;
-    visibility: hidden;
-    animation: drop 3s ease-out infinite;
-}
-
-.raindrop2 {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    top: 0;
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    border-radius: 50%;
-    opacity: 0.8;
-    visibility: hidden;
-    animation: drop 3s 1s ease-out infinite;
-}
-
-.raindrop3 {
-    position: absolute;
-    display: inline-block;
-    left: 0;
-    top: 0;
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    border-radius: 50%;
-    opacity: 0.8;
-    visibility: hidden;
-    animation: drop 3s 2s ease-out infinite;
-}
-
-@keyframes drop {
-    0% {
-        visibility: visible;
-        transform: scale(0);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.1;
-    }
-}
-
-.jump-container {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
-    margin: 10px;
-}
-
-.jump1 {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
-    left: 5px;
-    bottom: 0px;
-    animation: jumping 1.2s ease-in-out infinite;
-}
-
-.jump2 {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
-    left: 20px;
-    bottom: 0px;
-    animation: jumping 1.2s 0.4s ease-in-out infinite;
-}
-
-.jump3 {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
-    left: 35px;
-    bottom: 0px;
-    animation: jumping 1.2s 0.8s ease-in-out infinite;
-}
-
-@keyframes jumping {
-    0% {
-        bottom: 0px
-    }
-    25% {
-        bottom: 0px
-    }
-    50% {
-        bottom: 15px;
-    }
-    75% {
-        bottom: 0px;
-    }
-    100% {
-        bottom: 0px;
-    }
-}
-
-.loader {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
-    margin: 10px;
-    border-radius: 50%;
-}
-
-.loaderdots {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
-    left: 0px;
-    top: 0px;
-    border-radius: 50%;
-}
-
-.loaderdots::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: black;
-    border-radius: 50%;
-    left: 0px;
-    top: 0px;
-    animation: scl 2s linear infinite;
-    visibility: hidden;
-}
-
-#ld2 {
-    transform: rotate(45deg);
-}
-
-#ld3 {
-    transform: rotate(90deg)
-}
-
-#ld4 {
-    transform: rotate(135deg)
-}
-
-#ld5 {
-    transform: rotate(180deg)
-}
-
-#ld6 {
-    transform: rotate(225deg)
-}
-
-#ld7 {
-    transform: rotate(270deg)
-}
-
-#ld8 {
-    transform: rotate(315deg)
-}
-
-#ld1::after {
-    animation-delay: 0s;
-}
-
-#ld2::after {
-    animation-delay: 0.25s;
-}
-
-#ld3::after {
-    animation-delay: 0.5s;
-}
-
-#ld4::after {
-    animation-delay: 0.75s;
-}
-
-#ld5::after {
-    animation-delay: 1s;
-}
-
-#ld6::after {
-    animation-delay: 1.25s;
-}
-
-#ld7::after {
-    animation-delay: 1.5s;
-}
-
-#ld8::after {
-    animation-delay: 1.75s;
-}
-
-@keyframes scl {
-    0% {
-        visibility: visible;
-        transform: scale(1)
-    }
-    100% {
-        transform: scale(0.2)
-    }
-}
-
-.transp {
-    position: relative;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(89, 131, 165, 0) 77%, rgba(128, 185, 132, 0) 100%);
-    margin: 10px;
-    border-radius: 50%;
-    animation: spin2 2s infinite linear;
-}
-
-.transp::after {
-    content: '';
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    left: 5px;
-    top: 5px;
-    background-color: indianred;
-    border-radius: 50%;
-}
-
-@keyframes spin2 {
-    0% {}
-    100% {
-        transform: rotate(1turn)
     }
 }
