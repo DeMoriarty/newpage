@@ -328,6 +328,9 @@ article {
     display: inline-block;
     background-color: aqua;
     border-radius: 50%;
+    -webkit-animation: filling 2s ease-in-out infinite;
+    -moz-animation: filling 2s ease-in-out infinite;
+    -o-animation: filling 2s ease-in-out infinite;
     animation: filling 2s ease-in-out infinite;
 }
 
