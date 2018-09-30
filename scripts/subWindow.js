@@ -159,6 +159,7 @@ export default class SubWindow {
         this.body.appendChild(dragbar)
         this.dragbar = dragbar
 
+        // NOTE: Window Title
         let title = document.createElement('span')
         title.innerHTML = "New Window"
         title.style.textAlign = "center"
@@ -166,7 +167,7 @@ export default class SubWindow {
         title.style.display = 'block'
         title.style.position = 'relative'
         window.addEventListener('load', () => {
-            this.title.style.top = (this.dragbar.offsetHeight - this.title.offsetHeight) / 2
+            
         })
         this.dragbar.appendChild(title)
         this.title = title
@@ -177,10 +178,6 @@ export default class SubWindow {
         content.style.left = 5;
         content.style.position = 'absolute';
         content.style.backgroundColor = "white"
-        window.addEventListener('load', () => {
-            this.content.style.height = 'calc(100% - ' + (this.dragbar.offsetHeight + 10).toString() + 'px)';
-            this.content.style.top = 5 + this.dragbar.offsetHeight;
-        })
         this.body.appendChild(content)
         this.content = content
 
@@ -196,7 +193,16 @@ export default class SubWindow {
         body.appendChild(closeIcon)
         this.closeIcon = closeIcon
     }
-    appendTo(tag = document.body) {
-        tag.appendChild(this.windowmask)
+    appendTo() {
+        document.body.appendChild(this.windowmask)
+        this.content.style.height = 'calc(100% - ' + (this.dragbar.offsetHeight + 10).toString() + 'px)';
+        this.content.style.top = 5 + this.dragbar.offsetHeight;
+        this.title.style.top = (this.dragbar.offsetHeight - this.title.offsetHeight) / 2
+    }
+
+    appendChildren(list){
+        for(let item of list){
+            this.content.appendChild(item)
+        }
     }
 }

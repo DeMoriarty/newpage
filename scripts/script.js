@@ -1,10 +1,11 @@
 import subWindow from './subWindow.js';
-import {default as gradSpinner, waterdrop, jumper, dotSpinner, doubleSpinner} from './spinner.js'
+import {default as gradSpinner, waterdrop,ncLoader, jumper, dotSpinner, doubleSpinner, iosSpinner, clockSpinner} from './spinner.js'
 
 var conlog = console.log;
 
 // NOTE:Header
 var header = document.getElementsByClassName('header')[0]
+
 
 // NOTE:Content
 var content = document.getElementsByClassName('content')[0]
@@ -97,15 +98,17 @@ searchtag.onclick = () => {
 
 }
 
-var subw1 = new subWindow(150, 250, 400, 300);
+var subw1 = new subWindow(150, 50, 400, 300);
 var spin = doubleSpinner(0, 0, 20);
 var drop = waterdrop(100, 0, 30, 5, 3);
 var jump = jumper(200, 30, 3);
-var dot = dotSpinner(0,100,30,9, 2)
+var dot = dotSpinner(0,100,25, 12, 2)
 var grad = gradSpinner(100, 100, 30, 'white')
-subw1.content.appendChild(spin)
-subw1.content.appendChild(drop)
-subw1.content.appendChild(jump)
-subw1.content.appendChild(dot)
-subw1.content.appendChild(grad)
-subw1.appendTo(document.body)
+var ios = iosSpinner(200, 100, 20, 12, 1.2)
+var clock = clockSpinner(300, 100, 30, 60)
+var nc = ncLoader(300, 30, 30, 5);
+subw1.appendChildren([spin, drop, jump, dot, grad, ios, clock, nc])
+var winbut = document.getElementById('openwindow')
+winbut.onclick= ()=>{
+    subw1.appendTo()
+}
