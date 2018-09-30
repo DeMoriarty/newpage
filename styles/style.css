@@ -325,7 +325,7 @@ article {
     top : 100px;
     left: 100px;
     position: absolute;
-    display: inline-block;
+    display: block;
     background-color: aqua;
     border-radius: 50%;
     -webkit-animation: filling 2s ease-in-out infinite;
