@@ -98,6 +98,7 @@ export default class NavBar {
             float: right;
             display: blox;
             color: white;
+            z-index: 10;
             padding-left: 15px;
             padding-right: 15px;
             padding-top: 10px;
@@ -116,9 +117,9 @@ export default class NavBar {
 
 
         this.searchbox = document.createElement('div');
-        this.searchbox.classList.add("-sh-nav-searchbox")
+        this.searchbox.classList.add("-sh-nav-searchbox");
         sheet.insertRule(`.-sh-nav-searchbox {
-            background: linear-gradient( to bottom, rgb(90, 90, 90)0%, rgb(45, 45, 45) 50%, rgb(45, 45, 45) 100%);
+            background: none;
             float: right;
             color: white;
             box-sizing: border-box;
@@ -131,9 +132,22 @@ export default class NavBar {
             position: absolute;
             right: 50px;
             border-left: 1px darkgrey solid;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            animation : -sh-nav-searchbox-anim 0.2s ease-in forwards;
         }`)
         sheet.insertRule(`.-sh-nav-searchbox:hover {
-            animation: none;
+
+        }`)
+        sheet.insertRule(`@keyframes -sh-nav-searchbox-anim {
+            0% {
+                background: none;
+                transform: rotateX(-90deg);
+            } 
+            100% {
+                background: none;
+                transform: rotateX(0deg);
+            }
         }`)
 
         this.searchform = document.createElement('form')
@@ -187,15 +201,15 @@ export default class NavBar {
         this.searchicon.draggable = false;
         this.searchtag.appendChild(this.searchicon);
 
-        this.closeicon = document.createElement("i")
-        this.closeicon.classList.add("material-icons")
-        this.closeicon.innerText = "close"
+        this.closeicon = document.createElement("i");
+        this.closeicon.classList.add("material-icons");
+        this.closeicon.innerText = "close";
 
         this.searchtag.open = false;
         this.searchtag.onclick = () => {
             if (this.searchtag.open == false) {
                 this.searchtag.removeChild(this.searchicon);
-                this.navbar.appendChild(this.searchbox)
+                this.navbar.appendChild(this.searchbox);
                 this.searchtag.appendChild(this.closeicon);
                 this.searchtag.open = true;
             } else {
