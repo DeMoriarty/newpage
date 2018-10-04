@@ -11,9 +11,6 @@ var header = document.getElementsByClassName('header')[0]
 var content = document.getElementsByClassName('content')[0]
 var contentstyle = getComputedStyle(content)
 
-// NOTE:Sidebar
-var sizebar = document.getElementsByClassName("side")[0]
-sizebar.style.height = contentstyle.height
 // NOTE:Footer
 var footer = document.getElementsByClassName("footer")[0]
 
@@ -27,18 +24,6 @@ window.onscroll = () => {
         navbar.classList.add('sticky')
     } else {
         navbar.classList.remove('sticky')
-    }
-}
-
-var navbarItems = navbar.children
-
-for (let i = 0; i < navbarItems.length; i++) {
-    let current = navbarItems[i];
-    current.onmouseleave = () => {
-        if (current.href == window.location.href) { 
-        }
-    }
-    if (current.href == window.location.href) {
     }
 }
 
