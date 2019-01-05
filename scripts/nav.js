@@ -170,6 +170,7 @@ export default class NavBar {
         this.searchbutton = document.createElement("input")
         this.searchbutton.type = "submit"
         this.searchbutton.name = "submit"
+        this.searchbutton.value = "Search"
         this.searchbutton.classList.add("-sh-nav-searchbutton")
         sheet.insertRule(`.-sh-nav-searchbutton {
             display: inline-block;
