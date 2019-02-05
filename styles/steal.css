@@ -1,0 +1,57 @@
+* {
+
+}
+
+div {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+select {
+    padding: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+input {
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px;
+    width: 60px;
+}
+
+#jung {
+    margin-top: 40px
+}
+
+#jung::before {
+    content: 'Enemy Jungler:';
+    margin-right: 10px;
+}
+
+#bot::before {
+    content: 'Enemy Botlaner';
+    margin-right: 10px;
+}
+
+#sup::before {
+    content: 'Enemy Support';
+    margin-right: 10px;
+}
+
+#sup_attacks::before {
+    content: 'Will Attack'
+}
+
+#buff::before {
+    content: 'Starting Camp:';
+    margin-right: 10px;
+}
+
+#show {
+    padding: 10px;
+    background-color: rgb(130,220,250);
+    visibility: hidden;
+}
